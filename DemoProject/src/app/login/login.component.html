@@ -1,0 +1,28 @@
+<div class="align-center">
+<div class="col-sm-4">
+  <h1>User Login</h1>
+</div>
+  <form #loginForm="ngForm" (ngSubmit)="processLogin(loginForm.value)"> 
+    <div class="input-group mb-3 col-sm-6">
+      <div class="input-group-prepend">
+        <span class="input-group-text bg-primary text-white">E-mail</span>
+      </div>
+      <input type="text" name="email" class="form-control" placeholder="Enter Email" ngModel>
+    </div>
+  
+    <div class="input-group mb-3 col-sm-6">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-primary text-white">Password</span>
+          </div>
+      <input type="password" name="password" class="form-control" placeholder="Enter Password" ngModel>
+    </div>
+    <div class="input-group mb-3 ">
+    <div class=" col-sm-3">  
+      <input type="submit" value="Login" class="form-control bg-success text-white">
+    </div>
+    <div class=" col-sm-3">  
+        <input type="button" routerLink="/signup" value="Sign Up" class="form-control bg-info text-white">
+      </div>
+    </div>
+  </form>
+</div>

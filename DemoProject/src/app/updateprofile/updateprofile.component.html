@@ -1,0 +1,36 @@
+<div class="col-sm-12">
+  <div class="col-sm-4">
+    <h1>Update User</h1>
+  </div>
+    <form #updateForm = "ngForm" (ngSubmit)="processForm(updateForm.value)">
+      <input type="hidden" name="id" class="form-control" value="" placeholder="Enter Name" [(ngModel)]='id'>
+ 
+      <div class="input-group mb-3 col-sm-6">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-primary text-white">Name</span>
+            </div>
+            <input type="text" name="name" class="form-control" value="" placeholder="Enter Name" [(ngModel)]='name'>
+          </div>
+      <div class="input-group mb-3 col-sm-6">
+        <div class="input-group-prepend">
+          <span class="input-group-text bg-primary text-white">E-mail</span>
+        </div>
+        <input type="text" name="email" value="" class="form-control" placeholder="Enter Email" [(ngModel)]='email'>
+      </div>
+    
+      <div class="input-group mb-3 col-sm-6">
+          <div class="input-group-prepend">
+              <span class="input-group-text bg-primary text-white">Password</span>
+            </div>
+        <input type="text" name="password" class="form-control" placeholder="Enter Password" [(ngModel)]='password'> 
+      </div>
+      <div class="input-group mb-3 ">
+      <div class=" col-sm-3">  
+        <input type="button" routerLink='signup' value="Cancel" class="form-control bg-success text-white">
+      </div>
+      <div class=" col-sm-3">  
+          <input type="submit" value="Update" class="form-control bg-info text-white">
+        </div>
+      </div>
+    </form>
+  </div>

@@ -1,0 +1,60 @@
+<div>
+  <div class="col-sm-12">
+    <div class="col-sm-4">
+      <h1>User SignUp</h1>
+    </div>
+      <form #registerForm = "ngForm" (ngSubmit)="processForm(registerForm.value)">
+          <div class="input-group mb-3 col-sm-6">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-primary text-white">Name</span>
+              </div>
+              <input type="text" name="name" class="form-control" placeholder="Enter Name" ngModel>
+            </div>
+        <div class="input-group mb-3 col-sm-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-primary text-white">E-mail</span>
+          </div>
+          <input type="text" name="email" class="form-control" placeholder="Enter Email" ngModel>
+        </div>
+      
+        <div class="input-group mb-3 col-sm-6">
+            <div class="input-group-prepend">
+                <span class="input-group-text bg-primary text-white">Password</span>
+              </div>
+          <input type="password" name="password" class="form-control" placeholder="Enter Password" ngModel> 
+        </div>
+        <div class="input-group mb-3 ">
+        <div class=" col-sm-3">  
+          <input type="button" routerLink='' value="Cancel" class="form-control bg-success text-white">
+        </div>
+        <div class=" col-sm-3">  
+            <input type="submit" routerLink="/signup" value="Sign Up" class="form-control bg-info text-white">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-8">
+    <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th>UserId</th>
+            <th>UserName</th>
+            <th>Password</th>
+            <th>Email</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of userDataArray">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.email}}</td>
+            <td><button class="btn btn-primary" (click)="updateUser(user.email)">Update</button></td>
+            <td><button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
